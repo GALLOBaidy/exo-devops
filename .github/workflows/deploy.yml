@@ -39,7 +39,12 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            source "$NVM_DIR/nvm.sh"
+            nvm use 20
+
             cd /home/azureuser/devops
             npm install --omit=dev
             npm run build
+
             pm2 restart next-app || pm2 start "npm start" --name next-app
