@@ -12,7 +12,7 @@ export default function Home() {
 
         <p className={styles.description}>
           Get starting by editing{" "}
-          <code className={styles.code}>pages/index.tsx</code>
+          <code className={styles.code}>pages/index.tsx</code> ça marche
         </p>
 
         <div className={styles.grid}>
