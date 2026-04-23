@@ -1,20 +1,14 @@
-FROM debian:12 AS nodejs-my-website
-
-RUN apt-get update -yq \
-&& apt-get install curl gnupg -yq \
-&& curl -sL https://deb.nodesource.com/setup_24.x | bash \
-&& apt-get install nodejs -yq \
-&& apt-get clean -y
-
-COPY . /app/
+FROM node:20-alpine
 
 WORKDIR /app
 
+COPY package*.json ./
 RUN npm install
+
+COPY . .
+
 RUN npm run build
 
 EXPOSE 3000
 
-ENTRYPOINT ["entrypoint.sh"]
-CMD ["npm", "run", "start"]
- 
+CMD ["npm", "start"]
