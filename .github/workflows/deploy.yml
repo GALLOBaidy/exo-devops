@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "."
-          target: "/home/azureuser/devops"
+          target: "/home/azureuser/devops/exo-devops"
 
       - name: Restart PM2
         uses: appleboy/ssh-action@v1.0.3
