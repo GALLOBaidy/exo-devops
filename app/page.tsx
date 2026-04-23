@@ -18,7 +18,7 @@ export default function Home() {
         <div className={styles.grid}>
           <Link href="/about" className={styles.card}>
             <h2>About Page net &rarr;</h2>
-            <p>Cypress will test if this link is working.</p>
+            <p>Cliques pour voir si ça marche.</p>
           </Link>
 
           <a href="https://nextjs.org/docs" className={styles.card}>
